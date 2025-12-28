@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="League of Experts - Multi-LLM Decision Intelligence by Carlos Mundim">
+    <title>League of Experts</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111827;
+            color: white;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-left-color: #3B82F6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .loader-text {
+            color: #9CA3AF;
+            font-size: 14px;
+        }
+        #root:not(:empty) + .loader { display: none; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <div class="loader">
+        <div class="spinner"></div>
+        <div class="loader-text">Assembling the League of Experts...</div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
